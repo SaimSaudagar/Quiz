@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "bb705dc4-4cf8-4a33-8b6a-3d285b8c0e27",
+		"name": "Web Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21131467"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"saudagarsaim@gmail.com\",\r\n  \"password\": \"saim1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Main URL}}/{{Auth}}/login",
+							"host": [
+								"{{Main URL}}"
+							],
+							"path": [
+								"{{Auth}}",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Saim\",\r\n  \"email\": \"saudagarsaim@gmail.com\",\r\n  \"password\": \"saim1234\",\r\n  \"roles\": [\"Admin\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Main URL}}/{{Auth}}/signup",
+							"host": [
+								"{{Main URL}}"
+							],
+							"path": [
+								"{{Auth}}",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Role",
+					"item": [
+						{
+							"name": "Create Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "jwt_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"User\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Main URL}}/{{Role}}",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{Role}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Role",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "jwt_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Main URL}}/{{Role}}/65d371d42920801d9a0b9749",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{Role}}",
+										"65d371d42920801d9a0b9749"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Role",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "jwt_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"SuperAdmin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Main URL}}/{{Role}}/65d371d42920801d9a0b9749",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{Role}}",
+										"65d371d42920801d9a0b9749"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Role",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "jwt_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Main URL}}/{{Role}}/65d3743fbb04143f27aafc64",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{Role}}",
+										"65d3743fbb04143f27aafc64"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Saim\",\r\n  \"email\": \"saudagarsaim@gmail.com\",\r\n  \"password\": \"saim1234\",\r\n  \"roles\": [\"Admin\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Main URL}}/{{User}}",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{User}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "jwt_token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkMzczODEwMGIwOTFhNmZhNTZjNDQxIn0sImlhdCI6MTcwODM1NjUyMSwiZXhwIjoxNzA4MzYwMTIxfQ.qfxAT8lBOHpPuyVLelqjMM38w_kQ7vm1Wxc1URdbWHU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Main URL}}/{{User}}/65d3738100b091a6fa56c441",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{User}}",
+										"65d3738100b091a6fa56c441"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Saim Updated\",\r\n  \"email\": \"saudagarsaimupdated@gmail.com\",\r\n  \"password\": \"saim12345\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Main URL}}/{{User}}/65d3738100b091a6fa56c441",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{User}}",
+										"65d3738100b091a6fa56c441"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Main URL}}/{{User}}/1",
+									"host": [
+										"{{Main URL}}"
+									],
+									"path": [
+										"{{User}}",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
